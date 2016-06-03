@@ -1,0 +1,1 @@
+include ':app', ':autolayout', ':pulltorefreshlibaray', ':onekeyshare', ':sharesdk', ':smssdk', ':umengupdatesdk', ':umengfbsdk', ':umenganalyticssdk', ':umengchatsdk', ':numberpickerlibrary', ':alipaysdk'

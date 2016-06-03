@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:id="@+id/pre_raise_main"
+    tools:context=".activities.PreRaiseDetailActivity">
+
+    <include
+        layout="@layout/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/pre_header_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/shop_bg" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/edit_text_shap_bottom"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/pre_header_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="苹果鱼专卖店"
+                        android:textColor="@color/high_light_black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/pre_time_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center_vertical|left"
+                        android:paddingBottom="5dp"
+                        android:textSize="12sp"
+                        android:text="预热时间：2015-11-26至2015-12-25" />
+
+                </LinearLayout>
+
+                <include
+                    layout="@layout/vertical_line"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_shap_none"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/pre_call_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text_shap_none"
+                        android:drawableLeft="@mipmap/call_icon"
+                        android:drawableStart="@mipmap/call_icon"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:text="咨询"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_shap_none"
+                android:orientation="vertical">
+
+                <ProgressBar
+                    android:id="@+id/pre_raise_progressbar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:progressDrawable="@drawable/progressbar_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:max="100"
+                    android:progress="40" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pre_raise_progressbar"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+
+                    <TextView
+                        android:id="@+id/pre_raise_wactcher_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|left"
+                        android:text="2000人关注"
+                        android:textSize="10sp"
+                        android:textColor="@color/light_red" />
+
+
+                    <TextView
+                        android:id="@+id/pre_raise_left_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|right"
+                        android:text="剩余29天"
+                        android:textSize="10sp"
+                        android:textColor="@color/light_green" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/pre_raise_plan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit_text_shap_bottom"
+                android:drawableEnd="@mipmap/arrow_right"
+                android:drawableRight="@mipmap/arrow_right"
+                android:gravity="center_vertical|left"
+                android:paddingEnd="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingStart="20dp"
+                android:text="众筹计划"
+                android:textSize="14sp" />
+
+
+            <Button
+                android:id="@+id/pre_raise_promote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_shap_bottom"
+                android:drawableEnd="@mipmap/arrow_right"
+                android:drawableRight="@mipmap/arrow_right"
+                android:gravity="center_vertical|left"
+                android:paddingEnd="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingStart="20dp"
+                android:text="提升计划"
+                android:textSize="14sp" />
+
+
+            <Button
+                android:id="@+id/pre_raise_earn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_shap_bottom"
+                android:drawableEnd="@mipmap/arrow_right"
+                android:drawableRight="@mipmap/arrow_right"
+                android:gravity="center_vertical|left"
+                android:paddingEnd="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingStart="20dp"
+                android:text="投资收益"
+                android:textSize="14sp" />
+
+
+            <Button
+                android:id="@+id/pre_raise_security"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_shap_bottom"
+                android:drawableEnd="@mipmap/arrow_right"
+                android:drawableRight="@mipmap/arrow_right"
+                android:gravity="center_vertical|left"
+                android:paddingEnd="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingStart="20dp"
+                android:text="投资保障"
+                android:textSize="14sp" />
+
+
+            <RelativeLayout
+                android:id="@+id/pre_raise_focus_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@mipmap/btn_invest_normal">
+
+                <Button
+                    android:id="@+id/pre_raise_focus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@android:color/transparent"
+                    android:drawableLeft="@mipmap/focus_icon"
+                    android:drawableStart="@mipmap/focus_icon"
+                    android:text="关注"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+
+</LinearLayout>
+

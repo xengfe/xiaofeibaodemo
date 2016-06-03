@@ -1,0 +1,82 @@
+<resources>
+    <string name="title_activity_login">登录</string>
+    <string name="title_activity_register">注册</string>
+    <string name="title_activity_raise_earn">RaiseEarnActivity</string>
+    <string name="title_activity_raise_security">RaiseSecurityActivity</string>
+    <string name="title_activity_pre_raise_detail">PreRaiseDetailActivity</string>
+    <string name="title_activity_my_project">加入的项目</string>
+    <string name="title_activity_user_info">UserInfoActivity</string>
+    <string name="title_activity_setting">设置</string>
+    <string name="title_activity_focus_project">关注的项目</string>
+    <string name="title_activity_reset_phone">修改手机</string>
+    <string name="title_activity_submit_phone">修改手机</string>
+    <string name="title_activity_suggestion">意见反馈</string>
+    <string name="title_activity_about">关于我们</string>
+    <string name="title_activity_find_pwd">找回密码</string>
+    <string name="title_activity_set_user_name">基本信息</string>
+    <string name="title_activity_raise_detail"></string>
+    <string name="title_activity_raise_plan"></string>
+    <string name="title_activity_join_raise"></string>
+    <string name="title_activity_pay_type"></string>
+    <string name="title_activity_ask_rasie"></string>
+    <string name="title_activity_raise_promote"></string>
+
+
+
+    <string name="app_name">消费宝众筹</string>
+    <string name="app_back">返回</string>
+    <string name="app_ok">确定</string>
+    <string name="app_cancel">取消</string>
+    <string name="app_continue">继续</string>
+    <string name="app_tip">提示</string>
+    <string name="app_send">发送</string>
+    <string name="app_set">设置</string>
+    <string name="app_save">保存</string>
+    <string name="app_delete">删除</string>
+    <string name="app_nextstep">下一步</string>
+    <string name="app_finish">完成</string>
+    <string name="btn_send_phone_reg">获取验证码</string>
+    <string name="btn_resend_phone_reg">重新获取</string>
+    <!-- applet -->
+    <string name="applet_secimg_title">填写验证码</string>
+    <string name="applet_seccode_tip">验证码不能为空</string>
+
+
+    <!-- verify -->
+    <string name="verify_password_null_tip">密码不能为空，请输入密码</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_chat">ChatActivity</string>
+    <string name="title_activity_chat_group_setting">ChatGroupSettingActivity</string>
+    <string name="title_activity_wallet">WalletActivity</string>
+    <string name="title_activity_chat_group">ChatGroupActivity</string>
+    <string name="title_activity_forget_pay_pwd">ForgetPayPwdActivity</string>
+    <string name="title_activity_re_bind_bank">ReBindBankActivity</string>
+    <string name="title_activity_reset_bank_pwd">ResetBankPwdActivity</string>
+    <string name="title_activity_trade">TradeActivity</string>
+    <string name="title_activity_manager_pwd">ManagerPwdActivity</string>
+    <string name="title_activity_recharge">RechargeActivity</string>
+    <string name="title_activity_wallet_info">WalletInfoActivity</string>
+    <string name="title_activity_withdraw">WithdrawActivity</string>
+    <string name="title_activity_reset_pay_pwd">ResetPayPwdActivity</string>
+    <string name="title_activity_reset_pay_pwd_finish">ResetPayPwdFinishActivity</string>
+    <string name="title_activity_withdraw_detail">WithdrawDetailActivity</string>
+    <string name="title_activity_bank_add">BankAddActivity</string>
+    <string name="title_activity_set_pay_pwd">SetPayPwdActivity</string>
+    <string name="title_activity_bank_add_finish">BankAddFinishActivity</string>
+    <string name="title_activity_bank_list">BankListActivity</string>
+    <string name="title_activity_bank_info">BankInfoActivity</string>
+
+
+
+
+
+
+
+
+
+
+
+</resources>

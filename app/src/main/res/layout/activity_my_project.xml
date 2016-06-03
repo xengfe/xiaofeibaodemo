@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".activities.MyProjectActivity">
+
+
+    <include
+        layout="@layout/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RadioGroup
+        android:id="@+id/my_project_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/default_user_tab_bg"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/my_project_doing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:drawableEnd="@mipmap/home_vertical_line"
+            android:drawableRight="@mipmap/home_vertical_line"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:padding="6dp"
+            android:textSize="14sp"
+            android:text="众筹中" />
+
+        <RadioButton
+            android:id="@+id/my_project_fail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:drawableEnd="@mipmap/home_vertical_line"
+            android:drawableRight="@mipmap/home_vertical_line"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="6dp"
+            android:textSize="14sp"
+            android:text="众筹失败" />
+
+        <RadioButton
+            android:id="@+id/my_project_good"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:drawableEnd="@mipmap/home_vertical_line"
+            android:drawableRight="@mipmap/home_vertical_line"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="6dp"
+            android:textSize="14sp"
+            android:text="收益中" />
+
+        <RadioButton
+            android:id="@+id/my_project_over"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="13dp"
+            android:textSize="14sp"
+            android:text="收益结束" />
+
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/tab_content"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" />
+
+</LinearLayout>

@@ -1,0 +1,185 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.FragmentUser"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_title"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/default_user_bg">
+
+
+
+                <zkzl.xiaofeibao.widget.CircleImageView
+                    android:id="@+id/user_avator"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    android:background="@mipmap/default_user_avatar"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="#e5e5e5"/>
+
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/user_avator"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="90dp"
+                    android:text="周杰伦"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/user_name"
+                    android:layout_marginTop="10dp"
+                    android:background="@mipmap/default_user_tab_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/has_invest"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableEnd="@mipmap/home_vertical_line"
+                        android:drawableRight="@mipmap/home_vertical_line"
+                        android:gravity="center"
+                        android:text="投资金额:20亿"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/has_earn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="收益金额:10亿"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/wallet_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@mipmap/btn_join_icon"
+                android:drawableStart="@mipmap/btn_join_icon"
+                android:background="@drawable/edit_text_shap_bottom"
+                android:drawableEnd="@mipmap/arrow_right"
+                android:drawableRight="@mipmap/arrow_right"
+                android:gravity="center_vertical|left"
+                android:paddingEnd="20dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp"
+                android:paddingStart="10dp"
+                android:text="    我的钱包"
+                android:textColor="@color/light_black"
+                android:textSize="14sp" />
+
+
+            <Button
+                android:id="@+id/joined_project"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/btn_join_icon"
+                android:drawableStart="@mipmap/btn_join_icon"
+                android:background="@drawable/edit_text_shap_bottom"
+                android:drawableEnd="@mipmap/arrow_right"
+                android:drawableRight="@mipmap/arrow_right"
+                android:gravity="center_vertical|left"
+                android:paddingEnd="20dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp"
+                android:paddingStart="10dp"
+                android:text="    加入的项目"
+                android:textColor="@color/light_black"
+                android:textSize="14sp" />
+
+
+            <Button
+                android:id="@+id/foucs_project"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_shap_bottom"
+                android:drawableEnd="@mipmap/arrow_right"
+                android:drawableRight="@mipmap/arrow_right"
+                android:drawableStart="@mipmap/btn_foucs_icon"
+                android:drawableLeft="@mipmap/btn_foucs_icon"
+                android:gravity="center_vertical|left"
+                android:paddingEnd="20dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp"
+                android:paddingStart="10dp"
+                android:text="    关注的项目"
+                android:textColor="@color/light_black"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/group_chat_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_shap_bottom"
+                android:drawableEnd="@mipmap/arrow_right"
+                android:drawableRight="@mipmap/arrow_right"
+                android:drawableStart="@mipmap/btn_foucs_icon"
+                android:drawableLeft="@mipmap/btn_foucs_icon"
+                android:gravity="center_vertical|left"
+                android:paddingEnd="20dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp"
+                android:paddingStart="10dp"
+                android:text="    加入的群聊"
+                android:textColor="@color/light_black"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/setting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_shap_none"
+                android:drawableEnd="@mipmap/arrow_right"
+                android:drawableRight="@mipmap/arrow_right"
+                android:gravity="center_vertical|left"
+                android:drawableLeft="@mipmap/btn_setting_icon"
+                android:drawableStart="@mipmap/btn_setting_icon"
+                android:paddingEnd="20dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp"
+                android:paddingStart="10dp"
+                android:textColor="@color/light_black"
+                android:text="    设置"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>
+
+

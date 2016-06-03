@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".activities.ManagerPwdActivity">
+
+    <include layout="@layout/layout_title" />
+
+    <Button
+        android:id="@+id/change_pay_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_shap_bottom"
+        android:drawableEnd="@mipmap/arrow_right"
+        android:drawableRight="@mipmap/arrow_right"
+        android:gravity="center_vertical|left"
+        android:paddingEnd="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingStart="20dp"
+        android:text="修改支付密码"
+        android:textColor="@color/light_black"
+        android:textSize="14sp" />
+
+
+    <Button
+        android:id="@+id/forget_pay_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_shap_none"
+        android:drawableEnd="@mipmap/arrow_right"
+        android:drawableRight="@mipmap/arrow_right"
+        android:gravity="center_vertical|left"
+        android:paddingEnd="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingStart="20dp"
+        android:text="忘记支付密码"
+        android:textColor="@color/light_black"
+        android:textSize="14sp" />
+
+
+</LinearLayout>

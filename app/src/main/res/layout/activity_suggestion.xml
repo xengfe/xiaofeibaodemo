@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".activities.SuggestionActivity">
+
+    <include
+        layout="@layout/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/suggest_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="反馈内容"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="14sp"
+            android:background="@drawable/edit_text_shap_none"
+            android:gravity="top"
+            android:lineSpacingExtra="1dp"
+            android:padding="5dp"
+            android:minLines="10"
+            android:textCursorDrawable="@drawable/color_cursor" />
+
+    </LinearLayout>
+
+</LinearLayout>

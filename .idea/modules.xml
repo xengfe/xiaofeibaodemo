@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/alipaysdk/alipaysdk.iml" filepath="$PROJECT_DIR$/alipaysdk/alipaysdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android.iml" filepath="$PROJECT_DIR$/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/autolayout/autolayout.iml" filepath="$PROJECT_DIR$/autolayout/autolayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/numberpickerlibrary/numberpickerlibrary.iml" filepath="$PROJECT_DIR$/numberpickerlibrary/numberpickerlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onekeyshare/onekeyshare.iml" filepath="$PROJECT_DIR$/onekeyshare/onekeyshare.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pulltorefreshlibaray/pulltorefreshlibaray.iml" filepath="$PROJECT_DIR$/pulltorefreshlibaray/pulltorefreshlibaray.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sharesdk/sharesdk.iml" filepath="$PROJECT_DIR$/sharesdk/sharesdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smssdk/smssdk.iml" filepath="$PROJECT_DIR$/smssdk/smssdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/umenganalyticssdk/umenganalyticssdk.iml" filepath="$PROJECT_DIR$/umenganalyticssdk/umenganalyticssdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/umengchatsdk/umengchatsdk.iml" filepath="$PROJECT_DIR$/umengchatsdk/umengchatsdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/umengfbsdk/umengfbsdk.iml" filepath="$PROJECT_DIR$/umengfbsdk/umengfbsdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/umengupdatesdk/umengupdatesdk.iml" filepath="$PROJECT_DIR$/umengupdatesdk/umengupdatesdk.iml" />
+    </modules>
+  </component>
+</project>

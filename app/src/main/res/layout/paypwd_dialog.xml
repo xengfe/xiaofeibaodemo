@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginStart="20dp"
+        android:background="@mipmap/pay_type_bg"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/close_pay_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:padding="15dp"
+                android:src="@mipmap/btn_back_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="请输入支付密码"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/paypwd_show_money"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_shap_bottom"
+            android:maxLines="3"
+            android:minLines="3"
+            android:text="余额：500"
+            android:gravity="center"
+            android:textColor="@color/light_black"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/paypwd_select_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_shap_bottom"
+            android:drawableEnd="@mipmap/arrow_right"
+            android:drawableLeft="@mipmap/wx_icon"
+            android:drawableRight="@mipmap/arrow_right"
+            android:drawableStart="@mipmap/wx_icon"
+            android:gravity="center_vertical|left"
+            android:paddingEnd="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingStart="10dp"
+            android:text="&#160;&#160;微信支付"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:layout_height="wrap_content">
+
+            <com.jungly.gridpasswordview.GridPasswordView
+                android:id="@+id/paypwd_wiew"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                app:gpvTextColor="#666666"
+                app:gpvTextSize="25sp"
+                app:gpvLineColor="#e5e5e5"
+                app:gpvLineWidth="1dp"
+                app:gpvGridColor="#ffffff"
+                app:gpvPasswordLength="6"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                app:gpvPasswordType="numberPassword"/>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

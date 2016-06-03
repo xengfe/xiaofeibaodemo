@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:text="取消" />
+
+        <TextView
+            android:id="@+id/selected"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/confirm"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:text="确定" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#FFF2F0F0" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <com.iwhys.library.UnitNumberPicker
+            android:id="@+id/year"
+            style="@style/DateNumberPicker"
+            android:layout_weight="1"
+            app:unitText="年" />
+
+        <com.iwhys.library.UnitNumberPicker
+            android:id="@+id/month"
+            style="@style/DateNumberPicker"
+            android:layout_weight="1"
+            app:unitText="月" />
+
+        <com.iwhys.library.UnitNumberPicker
+            android:id="@+id/day"
+            style="@style/DateNumberPicker"
+            android:layout_weight="1"
+            app:unitText="日" />
+    </LinearLayout>
+</LinearLayout>

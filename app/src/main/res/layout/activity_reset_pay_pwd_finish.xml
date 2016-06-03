@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".activities.ResetPayPwdFinishActivity">
+
+    <include layout="@layout/layout_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_shap_bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="13dp"
+                    android:text="卡类型"
+                    android:textSize="14sp" />
+
+                <include layout="@layout/input_vertical_line" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/bank_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center_vertical|left"
+                        android:padding="13dp"
+                        android:text="中国工商银行"
+                        android:textSize="14sp" />
+
+                    <include layout="@layout/input_vertical_line" />
+
+                    <TextView
+                        android:id="@+id/bank_type"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="13dp"
+                        android:text="储蓄卡"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_shap_bottom"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="13sp"
+                    android:text="手机号"
+                    android:textColor="@color/light_black"
+                    android:textSize="14sp" />
+
+                <include layout="@layout/input_vertical_line" />
+
+                <EditText
+                    android:id="@+id/bank_mobile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="4"
+                    android:background="@drawable/edit_text_shap_none"
+                    android:gravity="center_vertical|left"
+                    android:hint="请输入预留手机号"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:padding="13dp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/hint_text_color"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_shap_bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="13dp"
+                    android:text="验证码"
+                    android:textColor="@color/light_black"
+                    android:textSize="14sp" />
+
+                <include layout="@layout/input_vertical_line" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:orientation="horizontal">
+
+
+                    <EditText
+                        android:id="@+id/bank_mobile_reg"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:background="@drawable/edit_text_shap_bottom"
+                        android:gravity="center_vertical|left"
+                        android:hint="验证码"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:padding="13dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/hint_text_color"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="14sp" />
+
+                    <include layout="@layout/input_vertical_line" />
+
+                    <Button
+                        android:id="@+id/send_bank_mobile_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:text="发送验证码"
+                        android:textColor="@color/title_blue"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_shap_none"
+                android:padding="13dp"
+                android:text="支付密码"
+                android:textColor="@color/light_black"
+                android:textSize="14sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_shap_none"
+                android:orientation="horizontal"
+                android:paddingEnd="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingStart="20dp">
+
+                <com.jungly.gridpasswordview.GridPasswordView
+                    android:id="@+id/bank_pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    app:gpvGridColor="#ffffff"
+                    app:gpvLineColor="#e5e5e5"
+                    app:gpvLineWidth="1dp"
+                    app:gpvPasswordLength="6"
+                    app:gpvPasswordType="numberPassword"
+                    app:gpvTextColor="#666666"
+                    app:gpvTextSize="25sp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_shap_none"
+                android:padding="13dp"
+                android:text="确认支付密码"
+                android:textColor="@color/light_black"
+                android:textSize="14sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_shap_none"
+                android:orientation="horizontal"
+                android:paddingBottom="20dp"
+                android:paddingEnd="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingStart="20dp">
+
+                <com.jungly.gridpasswordview.GridPasswordView
+                    android:id="@+id/bank_pwd_affirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    app:gpvGridColor="#ffffff"
+                    app:gpvLineColor="#e5e5e5"
+                    app:gpvLineWidth="1dp"
+                    app:gpvPasswordLength="6"
+                    app:gpvPasswordType="numberPassword"
+                    app:gpvTextColor="#666666"
+                    app:gpvTextSize="25sp" />
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/bank_pwd_commit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/btn_round_shap_selector"
+                android:gravity="center"
+                android:text="完成"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

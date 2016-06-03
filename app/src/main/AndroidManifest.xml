@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="zkzl.xiaofeibao">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- 友盟 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_ADDED" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_CHANGED" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_INSTALL" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REPLACED" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    ;
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activities.BaseActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="design_width"
+            android:value="768" />
+        <meta-data
+            android:name="design_height"
+            android:value="1280" />
+
+        <!-- 有盟更新参数 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="56692ef867e58e681b0002a2" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Channel ID" />
+        <!-- 有盟更新配置 -->
+        <service
+            android:name="com.umeng.update.net.DownloadingService"
+            android:process=":DownloadingService" />
+
+        <activity
+            android:name="com.umeng.update.UpdateDialogActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- 友盟意见反馈 -->
+        <activity android:name="com.umeng.fb.ConversationActivity" />
+
+        <!--
+        <receiver
+            android:name=".recever.NetworkChangeReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        -->
+
+        <receiver
+            android:name=".recever.AppRegister"
+            android:enabled="true"
+            android:exported="true" />
+        <!-- share sdk MobUIShell的路径是固定的，一定要在“cn.sharesdk.framework”下，因为它在Share-Core中   将1104646053数字改成在腾讯开放平台申请到的AppId即可。 -->
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <data android:scheme="tencent1105059336" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 微信分享回调 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.MainActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.LoginActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_login"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.login" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_register"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.regist" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ImageLoaderActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="standard"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+        </activity>
+        <activity
+            android:name=".activities.RaiseDetailActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_raise_detail"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.raise_detail" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.WebViewActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_raise_plan"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.web_view" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.JoinRaiseActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_join_raise"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.raise_join" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.PayTypeActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_pay_type"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="zkzl.xiaofeibao.activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.raise_pay_type" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.LookProfitActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_ask_rasie"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="zkzl.xiaofeibao.activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.raise_ask" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.LookBusinessActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_raise_promote"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.raise_promote" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.AvoidDisturbActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_raise_earn"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.avoid_disturb" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ResetPasswordActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_raise_security"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.reset_password" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.PreRaiseDetailActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_pre_raise_detail"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.pre_raise_detail" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.MyProjectActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_my_project"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.my_project" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.UserInfoActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_user_info"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.user_info" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.SettingActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_setting"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.setting" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.FocusProjectActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_focus_project"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.foucs_project" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ResetPhoneActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_reset_phone"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.reset_phone" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.SubmitPhoneActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_submit_phone"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.submit_phone" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.SuggestionActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_suggestion"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.suggestion" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.AboutActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_about"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.about" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.FindPwdActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_find_pwd"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.find_password" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.SetUserNameActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_set_user_name"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.reset_username" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.SearchActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_search"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.search" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ChatActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_chat"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.chat" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ChatGroupSettingActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_chat_group_setting"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.chatgroupsetting" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.WalletActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_wallet"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.wallet" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ChatGroupActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_chat_group"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.chatgroup" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ForgetPayPwdActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_forget_pay_pwd"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.forget_paypwd" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ReBindBankActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_re_bind_bank"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.rebind_bank" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ResetBankPwdActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_reset_bank_pwd"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.reset_bank_pwd" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.TradeActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_trade"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.trade" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ManagerPwdActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_manager_pwd"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.managerpwd" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.RechargeActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_recharge"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.recharge" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.WalletInfoActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_wallet_info"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.walletinfo" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.WithdrawActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_withdraw"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.withdraw" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ResetPayPwdActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_reset_pay_pwd"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.reset_paypwd" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ResetPayPwdFinishActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_reset_pay_pwd_finish"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.reset_paypwd_finish" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.WithdrawDetailActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_withdraw_detail"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.withdrawdetail" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.BankAddActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_bank_add"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.bankadd" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.SetPayPwdActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_set_pay_pwd"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BankAddActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="zkzl.xiaofeibao.activities.BankAddActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.setpaypwd" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.BankAddFinishActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_bank_add_finish"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BankAddActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BankAddActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.bankaddfinish" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.BankListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_bank_list"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.banklist" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.BankInfoActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_bank_info"
+            android:launchMode="standard"
+            android:parentActivityName=".activities.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseActivity" />
+
+            <intent-filter>
+                <action android:name="zkzl.xiaofeibao.action.bankinfo" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
